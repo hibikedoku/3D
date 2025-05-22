@@ -6,7 +6,6 @@ return function(player, RunService, circleFrame)
     viewport.BackgroundTransparency = 1
     viewport.Position = UDim2.new(-1, -10, -0.6, 0)
     viewport.BorderSizePixel = 0
-    viewport.ZIndex = 10
     viewport.Name = "AvatarViewport"
     viewport.Parent = circleFrame
 
