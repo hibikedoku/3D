@@ -2,7 +2,7 @@ return function(player, RunService, circleFrame)
     local Players = game:GetService("Players")
 
     local viewport = Instance.new("ViewportFrame")
-    viewport.Size = UDim2.new(2.3, 0, 2.3, 0)
+    viewport.Size = UDim2.new(1, 0, 1.5, 0)
     viewport.BackgroundTransparency = 1
     viewport.Position = UDim2.new(-1, -10, -0.6, 0)
     viewport.BorderSizePixel = 0
