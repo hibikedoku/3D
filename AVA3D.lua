@@ -1,10 +1,11 @@
 return function(player, RunService, circleFrame)
     local Players = game:GetService("Players")
 
+    
     local viewport = Instance.new("ViewportFrame")
-    viewport.Size = UDim2.new(1, 0, 1.5, 0)
+    viewport.Size = UDim2.new(0.5, 0, 1.5, 0)
     viewport.BackgroundTransparency = 1
-    viewport.Position = UDim2.new(-1, -10, -0.6, 0)
+    viewport.Position = UDim2.new(-0.1, -10, -0.3, 0)
     viewport.BorderSizePixel = 0
     viewport.Name = "AvatarViewport"
     viewport.Parent = circleFrame
@@ -90,7 +91,8 @@ return function(player, RunService, circleFrame)
 
             local pivot = CFrame.new(0, 0, 0)
             local rotation = CFrame.Angles(math.rad(currentRotationX), math.rad(currentRotationY), 0)
-            local camOffset = rotation:VectorToWorldSpace(Vector3.new(0, 0, 7))
+            local scaleFactor = viewport.AbsoluteSize.Y / 62  -- Base on 150px height (original size)
+            local camOffset = rotation:VectorToWorldSpace(Vector3.new(0, 0, 7 / scaleFactor))
             camera.CFrame = CFrame.new(pivot.Position + camOffset, pivot.Position)
         end
     end)
